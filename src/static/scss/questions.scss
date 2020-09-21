@@ -1,0 +1,120 @@
+.questions{
+  margin: 64px 0;
+  &__wrap{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  &__main{
+    width: calc(100% - 328px);
+    max-width: 632px;
+    padding-right: 40px;
+  }
+  &__section{
+    margin-bottom: 64px;
+    font-size: 16px;
+    line-height: 20px;
+    p{
+      margin-bottom: 12px;
+      &:last-child{margin-bottom: 0;}
+      strong{
+        font-weight: 400;
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -.017em;
+        color: #4A5568;
+      }
+    }
+  }
+  &__title{
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 16px;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 8px;
+      left: 0;
+      bottom: 6px;
+      z-index: -1;
+      transform: scaleX(0);
+      transition: transform .5s 1s;
+      transform-origin: 0 0;
+      background: linear-gradient(87.84deg, #195A6C -21.01%, #1E779A 14.87%, #27A7E3 29.03%, #2ABAFF 50.64%, #1DDAF0 64.49%, #0EFFE0 105.65%);
+    } 
+    br{display: none;}
+  }
+  .animated{
+    .questions__title{
+      &::before{
+        transform: scaleX(1);
+      }
+    }
+  }
+  @media only screen and (max-width : 991px){
+    &__title{
+      &::before{display: none;} 
+      br{display: block;}
+      & > span{
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+        white-space: nowrap;
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 8px;
+          left: 0;
+          bottom: 6px;
+          z-index: -1;
+          background: linear-gradient(87.84deg, #195A6C -21.01%, #1E779A 14.87%, #27A7E3 29.03%, #2ABAFF 50.64%, #1DDAF0 64.49%, #0EFFE0 105.65%);
+        }      
+      }
+    }
+  }
+  @media only screen and (max-width : 767px){
+    &__wrap{display: block;}
+    &__main{
+      width: 100%;
+      max-width: 100%;
+      padding-right: 0;
+    }
+    &__section{
+      margin-bottom: 64px;
+      font-size: 16px;
+      line-height: 20px;
+      p{
+        margin-bottom: 12px;
+        &:last-child{margin-bottom: 0;}
+        strong{
+          font-weight: 400;
+          margin-bottom: 16px;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: -.017em;
+          color: #4A5568;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width : 359px){
+    &__title{font-size: 32px;}
+  }
+}
+
+.fix-col{
+  width: 328px;
+  position: relative;
+  @media only screen and (max-width : 767px){
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto;
+  }
+}

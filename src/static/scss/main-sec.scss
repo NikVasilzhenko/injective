@@ -1,0 +1,80 @@
+.main-sec{
+  position: relative;
+  background: linear-gradient(0deg, #1A202C, #1A202C);
+  overflow: hidden;
+  &__wrap{
+    height: 100vh;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  &__title{
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 73px;
+    text-align: center;
+    letter-spacing: -.022em;
+    background: linear-gradient(90deg, 
+      #195A6C 0%, 
+      #1E779A 14%, 
+      #27A7E3 20%, 
+      #2ABAFF 28%, 
+      #1DDAF0 33%, 
+      #0EFFE0 50%,
+      #1DDAF0 67%,
+      #2ABAFF 72%,
+      #27A7E3 80%,
+      #1E779A 86%,
+      #195A6C 100%
+    );
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: shine 7.25s linear infinite;
+    @media only screen and (max-width : 767px){
+      animation: none;
+    }
+  }
+  &__txt{
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: -.019em;
+    color: #fff;
+  }  
+  @media only screen and (max-width : 767px){
+    &__wrap{
+      height: 100vh;
+      min-height: 480px;
+      max-width: 288px;
+    }
+    &__title{
+      font-size: 24px;
+      line-height: 34px;
+      letter-spacing: -.019em;
+    }
+    &__txt{
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -.014em;
+    } 
+  }
+}
+
+@keyframes shine {
+  to {
+      background-position: -200% center;
+  }
+}
+.main-sec-form{  
+  &__input{border-color: #91FAEF;}
+}

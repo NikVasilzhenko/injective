@@ -1,0 +1,43 @@
+.faq{
+  &__item{
+    margin-bottom: 8px;
+    background-color: #EDF2F7;
+    border-radius: 12px;
+    transition: background-color .25s;
+    &:last-child{margin-bottom: 0;}
+    &.open{background-color: #91FAEF;}
+  }
+  &__header{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    &.open{
+      .faq__arrow{transform: rotate(180deg);}
+    }
+  }
+  &__icn{
+    margin-right: 16px;
+    font-size: 0;
+  }
+  &__title{
+    margin-right: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -.011em;
+  }
+  &__arrow{
+    transition: transform .25s;
+    font-size: 0;
+  }
+  &__main{
+    display: none;
+    padding: 0 16px 16px 56px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -.006em;
+    color: #4A5568;
+  }
+}

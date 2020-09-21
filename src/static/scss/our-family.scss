@@ -1,0 +1,19 @@
+.our-family{
+  margin: 70px 0 32px;
+  &__title{margin-bottom: 48px;}
+  &__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+  }
+  &__item{margin: 0 19px 48px;}
+  @media only screen and (max-width : 767px){
+    &__item{
+      margin: 0 16px 48px;
+      max-width: calc(50% - 32px);
+    }
+  }
+}
