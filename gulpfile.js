@@ -137,6 +137,15 @@ gulp.task('svg', function() {
 
 //таск fonts
 gulp.task('fonts', function() {
+  return gulp.src('src/static/video/*')      
+    .pipe(gulp.dest('build/video/'))
+    .pipe(browserSync.reload({
+      stream: true
+  }));
+});
+
+//таск video
+gulp.task('video', function() {
   return gulp.src('src/static/fonts/*')      
     .pipe(gulp.dest('build/fonts/'))
     .pipe(browserSync.reload({
@@ -172,12 +181,13 @@ gulp.task('watch', function() {
   gulp.watch('src/static/img/og/*', gulp.series('og'));
   gulp.watch('src/static/img/svg/*', gulp.series('svg'));
   gulp.watch('src/static/fonts/*', gulp.series('fonts'));
+  gulp.watch('src/static/video/*', gulp.series('video'));
   gulp.watch('src/static/img/svg/*.svg', gulp.series('svg'));
 });
 
 //дефолтный таск, запускаемый по команде gulp
 gulp.task('default', gulp.series(
   gulp.parallel('iconfont'), //параллельный запуск тасков
-  gulp.parallel('pug', 'sass', 'vendors', 'scripts', 'pic', 'favicon', 'og', 'svg', 'fonts'), //параллельный запуск тасков
+  gulp.parallel('pug', 'sass', 'vendors', 'scripts', 'pic', 'favicon', 'og', 'svg', 'fonts', 'video'), //параллельный запуск тасков
   gulp.parallel('watch', 'serve') //параллельный запуск тасков после выполнения предыдущих
 ));
